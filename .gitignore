@@ -169,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+#Don't push all of the saved training and testing data, nore the models
+data/
+*.pt
