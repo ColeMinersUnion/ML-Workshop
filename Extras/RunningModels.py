@@ -2,6 +2,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
+#! Runs the CNN model
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -72,6 +74,6 @@ if __name__ == '__main__':
     model = load_model(fmodel)
     img_tensor = image_to_tensor(fdata)
     predicted_class = predict_image_class(model, img_tensor)
-    print(f"Predicted Class: {predicted_class}")
+    print(f"\nPredicted Class: {predicted_class}\n")
 
 
