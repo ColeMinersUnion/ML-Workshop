@@ -1,10 +1,10 @@
 #Convulutional Neural Network for MNIST dataset
 import argparse
-import torch
-import torch.nn as nn
+import torch #pytorch
+import torch.nn as nn #pytorch's neural network
 import torch.nn.functional as F
-import torch.optim as optim
-from torchvision import datasets, transforms
+import torch.optim as optim #optimization?
+from torchvision import datasets, transforms #datasets is were MNIST comes from. 
 from torch.optim.lr_scheduler import StepLR
 
 
@@ -118,10 +118,11 @@ def main():
         test_kwargs.update(cuda_kwargs)
 
 
-    # Load the dataset
+    # Load & Download the dataset
     train_dataset = datasets.MNIST(root='../data', train=True, download=True)
 
-    # Compute the mean and standard deviation
+    # Compute the mean and standard deviation. 
+    # The values range from 0-255, so divide by 255. 
     mean = train_dataset.data.float().mean() / 255
     std = train_dataset.data.float().std() / 255
 
@@ -129,10 +130,13 @@ def main():
         transforms.ToTensor(),
         transforms.Normalize((mean,), (std,))
         ])
-    dataset1 = datasets.MNIST('../data', train=True, download=True,
+    
+    #split the dataset into a training set and a testing set
+    dataset1 = datasets.MNIST('../data', train=True,
                        transform=transform)
     dataset2 = datasets.MNIST('../data', train=False,
                        transform=transform)
+    
     train_loader = torch.utils.data.DataLoader(dataset1,**train_kwargs)
     test_loader = torch.utils.data.DataLoader(dataset2, **test_kwargs)
 
@@ -146,7 +150,7 @@ def main():
         scheduler.step()
 
     if args.save_model:
-        torch.save(model.state_dict(), "mnist_cnn.pt")
+        torch.save(model.state_dict(), "../Extras/mnist_cnn.pt")
 
 
 if __name__ == '__main__':
