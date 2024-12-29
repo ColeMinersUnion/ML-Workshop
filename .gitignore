@@ -173,3 +173,4 @@ cython_debug/
 #Don't push all of the saved training and testing data, nore the models
 data/
 *.pt
+*.DS_Store

@@ -120,7 +120,7 @@ def main():
 
     # Load & Download the dataset
     train_dataset = datasets.MNIST(root='../data', train=True, download=True)
-
+    
     # Compute the mean and standard deviation. 
     # The values range from 0-255, so divide by 255. 
     mean = train_dataset.data.float().mean() / 255
