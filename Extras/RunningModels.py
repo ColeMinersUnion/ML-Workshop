@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-#! Runs the CNN model
+#! Runs the PyTorch CNN model
 
 class Net(nn.Module):
     def __init__(self):

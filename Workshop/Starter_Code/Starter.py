@@ -6,7 +6,7 @@ from torchvision import datasets, transforms #datasets is were MNIST comes from.
 from torch.optim.lr_scheduler import StepLR
 
 class Network(nn.Module): 
-    def __init__(self):
+    def __init__(self, input_size, hidden_size, num_classes):
         #Inherit nn.Module
         super(Network, self).__init__()
 

@@ -19,8 +19,8 @@ class Net(nn.Module):
         self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
-        x = self.conv1(x)
-        x = F.relu(x)
+        x = self.conv1(x) 
+        x = F.relu(x) 
         x = self.conv2(x)
         x = F.relu(x)
         x = F.max_pool2d(x, 2)
@@ -120,7 +120,7 @@ def main():
 
     # Load & Download the dataset
     train_dataset = datasets.MNIST(root='../data', train=True, download=True)
-    
+
     # Compute the mean and standard deviation. 
     # The values range from 0-255, so divide by 255. 
     mean = train_dataset.data.float().mean() / 255
