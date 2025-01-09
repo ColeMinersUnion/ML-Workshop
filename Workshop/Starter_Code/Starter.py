@@ -9,7 +9,7 @@ class Network(nn.Module):
     # Input size is the size of the input image
     # hidden size is the size of the hidden layer
     # num_classes is the number of output classes
-    def __init__(self, input_size, hidden_size, num_classes):
+    def __init__(self, input_size, hidden_layers, hidden_units, num_classes):
         #Inherit nn.Module
         super(Network, self).__init__()
 

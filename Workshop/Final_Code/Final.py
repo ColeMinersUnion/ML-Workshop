@@ -3,7 +3,7 @@ import torch.nn as nn #pytorch's neural network
 import torch.nn.functional as F
 import torch.optim as optim #optimization?
 from torchvision import datasets, transforms #datasets is were MNIST comes from. 
-from torch.optim.lr_scheduler import StepLR
+from torch.optim.lr_scheduler import StepLR #scheduling algorithm
 
 #Implementing a dense neural network
 class Network(nn.Module): 
@@ -21,7 +21,7 @@ class Network(nn.Module):
             from warnings import warn
             warn("There must be at least one hidden layer. Setting hidden_layers to 1.")
             hidden_layers = 1
-        elif (hidden_layers != len(hidden_units)):
+        elif (hidden_layers != len(hidden_units)): 
             from warnings import warn
             warn("The number of hidden units does not match the number of hidden layers. Using the first value in hidden_units for all layers.")
         
@@ -53,7 +53,7 @@ class Network(nn.Module):
 def train(model, device, train_loader, optimizer, epoch):
     log_interval = 10
     model.train() 
-    criterion = nn.CrossEntropyLoss()  # Use CrossEntropyLoss
+    criterion = nn.CrossEntropyLoss()  # Set criterion
     for batch_idx, (data, target) in enumerate(train_loader):
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
@@ -141,7 +141,7 @@ def main():
     train_loader = torch.utils.data.DataLoader(training_data,**training_kwargs)
     test_loader = torch.utils.data.DataLoader(testing_data, **testing_kwargs)
 
-    input_size=dataset.data.shape[1] * dataset.data.shape[2]
+    input_size=dataset.data.shape[1] * dataset.data.shape[2] #784 = 28*28
     model = Network(input_size=input_size, hidden_layers=hidden_layers, hidden_units=[256]).to(device)
 
     #Create an optimizer
@@ -161,6 +161,7 @@ def main():
 if __name__ == '__main__':
     main()
     #please don't break
+    #update it didn't break
 
 
 

@@ -27,8 +27,9 @@ pip install torch torchvision
 To check if installations were successful, enter `pip list`. There will be more than just two packages. 
 
 ## About MNIST
-For the purposes of this workshop, there are a few key details and assumptions that ought to be established. Modified National Institute of Standards and Technology (MNIST) Database is a database of handwritten digits, often used to teach and develop machine learning algorithms. The dataset is split into two parts. A training set, and a testing set. The current dataset is a greyscale image, with each pixel having a corresponding color value between 0-255. Each image is 28x28 pixels. 
+For the purposes of this workshop, there are a few key details and assumptions that ought to be established. Modified National Institute of Standards and Technology (MNIST) Database is a database of handwritten digits, often used to teach and develop machine learning algorithms. The dataset is split into two parts. A training set, and a testing set. The current dataset is a greyscale image, with each pixel having a corresponding color value between 0-255. Each image is 28x28 pixels. In both the training and testing sets, each image is labeled with a classification: the number the image represents. 
 
-
+# About the code
+We will be creating a dense neural network. The starter and final code can be found under the workshop folder. A neural network consists of neurons, some piece of memory that holds data. A dense neural network consists of several layers. ![A visualization of a Dense Neural Network](DNN.png). The first layer is the input layer. Each neuron of the input layer will correspond to the grayscale value of each pixel in a MNIST image. The output layer consists of each of the possible classifications in the training dataset. In between the input and output layers, there exists some nonzero set of hidden layers. 
 
 
