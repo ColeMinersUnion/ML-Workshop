@@ -91,10 +91,10 @@ def test(model, device, test_loader):
 def main():
     #Parameters
     lr = 1.0
-    gamma = 0.7
-    epochs = 15
-    save = False
-    hidden_layers = 4
+    gamma = 0.7 
+    epochs = 15 #Mostly arbitrary
+    save = False 
+    hidden_layers = 3 #Also arbitrary
 
     # Load & Download the dataset
     dataset = datasets.MNIST(root='../data', train=True, download=True)
